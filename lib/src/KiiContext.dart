@@ -4,8 +4,11 @@ class KiiContext {
   final String appID;
   final String appKey;
   final String baseURL;
-  final KiiHttpClient Function() clientFactory;
+  KiiHttpClient client;
   String token = "";
 
-  KiiContext(this.appID, this.appKey, this.baseURL, this.clientFactory);
+  KiiContext(this.appID, this.appKey, this.baseURL,
+      KiiHttpClient Function(KiiContext) clientFactory) {
+    this.client = clientFactory(this);
+  }
 }

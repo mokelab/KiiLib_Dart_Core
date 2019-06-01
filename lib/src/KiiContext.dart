@@ -1,4 +1,4 @@
-import 'package:KiiLibCore/src/KiiHttpClient.dart';
+import 'package:kiilib_core/src/KiiHttpClient.dart';
 
 class KiiContext {
   final String appID;

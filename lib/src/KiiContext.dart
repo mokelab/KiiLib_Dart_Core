@@ -11,4 +11,12 @@ class KiiContext {
       KiiHttpClient Function(KiiContext) clientFactory) {
     this.client = clientFactory(this);
   }
+
+  Map<String, String> makeAuthHeader() {
+    if (this.token.length == 0) {
+      return {};
+    } else {
+      return {"authorization": "bearer ${this.token}"};
+    }
+  }
 }
